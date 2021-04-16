@@ -219,11 +219,16 @@ int test_driver_int(
   cout << left << s_real_num.type_name();
   cout.width(38);
   cout << left << s_real_den.type_name();
-  cout << "OUTPUTS: ";
+  cout << "OUTPUTS (q): ";
   cout.width(38);
   cout << left << us_real_quo.type_name();
   cout.width(38);
   cout << left << s_real_quo.type_name();
+  cout << " (r): ";
+  cout.width(38);
+  cout << left << us_real_rem.type_name();
+  cout.width(38);
+  cout << left << s_real_rem.type_name();
   cout << "RESULT: ";
 
   int bit_value = 1;
