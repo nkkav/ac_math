@@ -80,7 +80,6 @@ int test_driver(
   bool details = false
 )
 {
-  bool passed = true;
   double max_error_arccosine   = 0.0; // reset for this run
 
   ac_fixed<Wfi, Ifi, Sfi, AC_TRN, AC_WRAP>                 input;
@@ -126,6 +125,8 @@ int test_driver(
     if (this_error_arccosine > max_error_arccosine) {max_error_arccosine = this_error_arccosine;}
 
   }
+
+  bool passed = max_error_arccosine < allowed_error;
 
   if (passed) { printf("PASSED , max err (%f sin) \n", max_error_arccosine); }
   else        { printf("FAILED , max err (%f sin) \n", max_error_arccosine); } // LCOV_EXCL_LINE

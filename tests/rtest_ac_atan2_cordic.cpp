@@ -81,7 +81,6 @@ int test_driver(
   bool details = false
 )
 {
-  bool passed = true;
   double max_error_atan2   = 0.0; // reset for this run
 
   ac_fixed<Wfi, Ifi, Sfi, AC_TRN, AC_WRAP>                       y;
@@ -130,6 +129,8 @@ int test_driver(
       if (this_error_atan2 > max_error_atan2) {max_error_atan2 = this_error_atan2;}
 
     }
+
+  bool passed = max_error_atan2 < allowed_error;
 
   if (passed) { printf("PASSED , max err (%f atan2) \n", max_error_atan2); }
   else        { printf("FAILED , max err (%f atan2) \n", max_error_atan2); } // LCOV_EXCL_LINE

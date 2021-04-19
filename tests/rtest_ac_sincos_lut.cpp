@@ -82,7 +82,6 @@ int test_driver(
   bool details = false
 )
 {
-  bool passed = true;
   double max_error_sine   = 0.0; // reset for this run
   double max_error_cosine = 0.0; // reset for this run
 
@@ -144,6 +143,8 @@ int test_driver(
     if (this_error_cosine > max_error_cosine) {max_error_cosine = this_error_cosine;}
 
   }
+
+  bool passed = (max_error_sine < allowed_error) && (max_error_cosine < allowed_error);
 
   if (passed) { printf("PASSED , max err (%f sin) (%f cos)\n", max_error_sine, max_error_cosine); }
   else        { printf("FAILED , max err (%f sin) (%f cos)\n", max_error_sine, max_error_cosine); } // LCOV_EXCL_LINE
