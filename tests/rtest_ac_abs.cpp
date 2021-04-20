@@ -419,7 +419,7 @@ int test_driver_complex(
   ac_complex<ac_fixed< Wfi, Ifi, S, AC_TRN, AC_WRAP> > input_complex;
   ac_fixed< outWfi, outIfi, false, AC_TRN, AC_WRAP> output_complex;
 
-  double lower_limit, upper_limit, step, this_error;
+  double lower_limit, upper_limit, step;
   bool correct_iteration;
 
   // set ranges and step size for fixed point testbench

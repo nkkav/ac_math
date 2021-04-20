@@ -145,7 +145,6 @@ int test_driver_fixed(
   bool passed = true;
   double max_log2_error = 0.0;
 
-  bool check_monotonic = true;
   bool compare_log2 = false;
   double old_output_log2;
 

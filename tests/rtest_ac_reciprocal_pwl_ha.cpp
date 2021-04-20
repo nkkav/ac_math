@@ -447,8 +447,6 @@ int test_driver_float(
   upper_limit_mantissa = sample_mantissa.template set_val<AC_VAL_MAX>().to_double();
   step_mantissa        = sample_mantissa.template set_val<AC_VAL_QUANTUM>().to_double();
 
-  string empty_str = "";
-
   cout << "TEST: ac_reciprocal_pwl_ha() AC_FLOAT INPUT: ";
   cout.width(38);
   cout << left << input_float.type_name();
@@ -574,8 +572,6 @@ int test_driver_real_float(
     sample_exponent_array[Efl + i + 1] = sample_exponent;
     sample_exponent_array[Efl - i - 1] = -sample_exponent;
   }
-
-  string empty_str = "";
 
   cout << "TEST: ac_reciprocal_pwl_ha() AC_FLOAT INPUT: ";
   cout.width(38);
